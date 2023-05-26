@@ -81,6 +81,8 @@
 				C52F2C522A215DB10026289A /* ContentView.swift */,
 				C52F2C542A215DB30026289A /* Assets.xcassets */,
 				C52F2C562A215DB30026289A /* Preview Content */,
+				C52F2C7A2A215DCE0026289A /* NFCTagWritter.swift */,
+				C52F2C7E2A215E140026289A /* AirTag.swift */,
 			);
 			path = MockNFCTag;
 			sourceTree = "<group>";
@@ -202,7 +204,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C52F2C532A215DB10026289A /* ContentView.swift in Sources */,
+				C52F2C7F2A215E140026289A /* AirTag.swift in Sources */,
 				C52F2C512A215DB10026289A /* MockNFCTagApp.swift in Sources */,
+				C52F2C7B2A215DCE0026289A /* NFCTagWritter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
