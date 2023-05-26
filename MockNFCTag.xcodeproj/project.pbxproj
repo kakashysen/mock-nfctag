@@ -11,20 +11,13 @@
 		C52F2C532A215DB10026289A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F2C522A215DB10026289A /* ContentView.swift */; };
 		C52F2C552A215DB30026289A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C52F2C542A215DB30026289A /* Assets.xcassets */; };
 		C52F2C582A215DB30026289A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C52F2C572A215DB30026289A /* Preview Assets.xcassets */; };
-		C52F2C622A215DB30026289A /* MockNFCTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F2C612A215DB30026289A /* MockNFCTagTests.swift */; };
-		C52F2C6C2A215DB30026289A /* MockNFCTagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F2C6B2A215DB30026289A /* MockNFCTagUITests.swift */; };
-		C52F2C6E2A215DB30026289A /* MockNFCTagUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F2C6D2A215DB30026289A /* MockNFCTagUITestsLaunchTests.swift */; };
+		C52F2C7B2A215DCE0026289A /* NFCTagWritter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F2C7A2A215DCE0026289A /* NFCTagWritter.swift */; };
+		C52F2C7F2A215E140026289A /* AirTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F2C7E2A215E140026289A /* AirTag.swift */; };
+		C52F2C802A21636B0026289A /* AirTagTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F2C7C2A215DFD0026289A /* AirTagTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		C52F2C5E2A215DB30026289A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C52F2C452A215DB10026289A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C52F2C4C2A215DB10026289A;
-			remoteInfo = MockNFCTag;
-		};
-		C52F2C682A215DB30026289A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C52F2C452A215DB10026289A /* Project object */;
 			proxyType = 1;
@@ -40,10 +33,9 @@
 		C52F2C542A215DB30026289A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C52F2C572A215DB30026289A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C52F2C5D2A215DB30026289A /* MockNFCTagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockNFCTagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C52F2C612A215DB30026289A /* MockNFCTagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNFCTagTests.swift; sourceTree = "<group>"; };
-		C52F2C672A215DB30026289A /* MockNFCTagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockNFCTagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C52F2C6B2A215DB30026289A /* MockNFCTagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNFCTagUITests.swift; sourceTree = "<group>"; };
-		C52F2C6D2A215DB30026289A /* MockNFCTagUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNFCTagUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C52F2C7A2A215DCE0026289A /* NFCTagWritter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCTagWritter.swift; sourceTree = "<group>"; };
+		C52F2C7C2A215DFD0026289A /* AirTagTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTagTest.swift; sourceTree = "<group>"; };
+		C52F2C7E2A215E140026289A /* AirTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C52F2C642A215DB30026289A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,7 +61,6 @@
 			children = (
 				C52F2C4F2A215DB10026289A /* MockNFCTag */,
 				C52F2C602A215DB30026289A /* MockNFCTagTests */,
-				C52F2C6A2A215DB30026289A /* MockNFCTagUITests */,
 				C52F2C4E2A215DB10026289A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +70,6 @@
 			children = (
 				C52F2C4D2A215DB10026289A /* MockNFCTag.app */,
 				C52F2C5D2A215DB30026289A /* MockNFCTagTests.xctest */,
-				C52F2C672A215DB30026289A /* MockNFCTagUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,18 +96,9 @@
 		C52F2C602A215DB30026289A /* MockNFCTagTests */ = {
 			isa = PBXGroup;
 			children = (
-				C52F2C612A215DB30026289A /* MockNFCTagTests.swift */,
+				C52F2C7C2A215DFD0026289A /* AirTagTest.swift */,
 			);
 			path = MockNFCTagTests;
-			sourceTree = "<group>";
-		};
-		C52F2C6A2A215DB30026289A /* MockNFCTagUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C52F2C6B2A215DB30026289A /* MockNFCTagUITests.swift */,
-				C52F2C6D2A215DB30026289A /* MockNFCTagUITestsLaunchTests.swift */,
-			);
-			path = MockNFCTagUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,24 +139,6 @@
 			productReference = C52F2C5D2A215DB30026289A /* MockNFCTagTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C52F2C662A215DB30026289A /* MockNFCTagUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C52F2C772A215DB30026289A /* Build configuration list for PBXNativeTarget "MockNFCTagUITests" */;
-			buildPhases = (
-				C52F2C632A215DB30026289A /* Sources */,
-				C52F2C642A215DB30026289A /* Frameworks */,
-				C52F2C652A215DB30026289A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C52F2C692A215DB30026289A /* PBXTargetDependency */,
-			);
-			name = MockNFCTagUITests;
-			productName = MockNFCTagUITests;
-			productReference = C52F2C672A215DB30026289A /* MockNFCTagUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +153,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					C52F2C5C2A215DB30026289A = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = C52F2C4C2A215DB10026289A;
-					};
-					C52F2C662A215DB30026289A = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = C52F2C4C2A215DB10026289A;
 					};
@@ -221,7 +173,6 @@
 			targets = (
 				C52F2C4C2A215DB10026289A /* MockNFCTag */,
 				C52F2C5C2A215DB30026289A /* MockNFCTagTests */,
-				C52F2C662A215DB30026289A /* MockNFCTagUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,13 +188,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C52F2C5B2A215DB30026289A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C52F2C652A215DB30026289A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,16 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C52F2C622A215DB30026289A /* MockNFCTagTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C52F2C632A215DB30026289A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C52F2C6C2A215DB30026289A /* MockNFCTagUITests.swift in Sources */,
-				C52F2C6E2A215DB30026289A /* MockNFCTagUITestsLaunchTests.swift in Sources */,
+				C52F2C802A21636B0026289A /* AirTagTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +221,6 @@
 			isa = PBXTargetDependency;
 			target = C52F2C4C2A215DB10026289A /* MockNFCTag */;
 			targetProxy = C52F2C5E2A215DB30026289A /* PBXContainerItemProxy */;
-		};
-		C52F2C692A215DB30026289A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C52F2C4C2A215DB10026289A /* MockNFCTag */;
-			targetProxy = C52F2C682A215DB30026289A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,42 +437,6 @@
 			};
 			name = Release;
 		};
-		C52F2C782A215DB30026289A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JEN6E4Z53Z;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.jappsku.MockNFCTagUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MockNFCTag;
-			};
-			name = Debug;
-		};
-		C52F2C792A215DB30026289A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JEN6E4Z53Z;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.jappsku.MockNFCTagUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MockNFCTag;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -569,15 +463,6 @@
 			buildConfigurations = (
 				C52F2C752A215DB30026289A /* Debug */,
 				C52F2C762A215DB30026289A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C52F2C772A215DB30026289A /* Build configuration list for PBXNativeTarget "MockNFCTagUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C52F2C782A215DB30026289A /* Debug */,
-				C52F2C792A215DB30026289A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
