@@ -6,17 +6,19 @@
 //
 
 import Foundation
-import CoreNFC
 
+protocol MyNFCMiFareTag {
+  func sendMiFareCommand(commandPacket command: Data, resultHandler: @escaping (Result<Data, Error>) -> Void)
+}
 
 protocol CommandExecutor {
   
-  func write(data dataToWrite: Data, for tag: NFCMiFareTag) async -> Data
+  func write(data dataToWrite: Data, for tag: MyNFCMiFareTag) async -> Data
 }
 
 final class AirTag: CommandExecutor {
   
-  func write(data dataToWrite: Data, for tag: NFCMiFareTag) async -> Data {
+  func write(data dataToWrite: Data, for tag: MyNFCMiFareTag) async -> Data {
     let result = await withCheckedContinuation{ (continuation: CheckedContinuation<Data, Never>) in
       tag.sendMiFareCommand(commandPacket: dataToWrite) { result in
         // logic what I need to test

@@ -27,6 +27,9 @@ final class TagReader: NSObject, NFCTagReaderSessionDelegate {
     case .miFare(let tag):
       // tag is NFCMiFare
       Task {
+        /// Test are working but now as the write function needs a MyNFCMiFareTag the code in production doesn't
+        /// I don't know how can I address this as `MyNFCMiFareTag` is a protocol and `NFCMiFareTag` as well,
+        /// I cannot make a protocol conform another protocol 🤷‍♂️
         let result = await airTag.write(data: Data(), for: tag)
       }
     default:

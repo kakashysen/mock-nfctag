@@ -14,7 +14,7 @@ final class AirTagTest: XCTestCase {
   
   func test_wirteData_shouldFinishSuccess() async {
     let sut = makeSUT()
-    let mockTag = NFCMiFareTagMock()
+    let mockTag = MyNFCMiFareTagMock()
     mockTag.commandResult = Data([0xFF])
     let data = Data([0xAA, 0x19])
     
@@ -35,7 +35,9 @@ final class AirTagTest: XCTestCase {
 }
 
 
-class NFCMiFareTagMock: NSObject, NFCMiFareTag {
+class MyNFCMiFareTagMock: MyNFCMiFareTag {
+
+  
   
   enum Message {
     case sendMiFareCommand
@@ -44,76 +46,9 @@ class NFCMiFareTagMock: NSObject, NFCMiFareTag {
   private(set) var messages = [Message]()
   var commandResult: Data!
   
-  func sendMiFareCommand(commandPacket command: Data, completionHandler: @escaping (Data, Error?) -> Void) {
-    completionHandler(commandResult, nil)
+  func sendMiFareCommand(commandPacket command: Data, resultHandler: @escaping (Result<Data, Error>) -> Void) {
+    resultHandler(.success(commandResult))
     messages.append(.sendMiFareCommand)
   }
-  
-  func sendMiFareISO7816Command(_ apdu: NFCISO7816APDU, completionHandler: @escaping (Data, UInt8, UInt8, Error?) -> Void) {
-    
-  }
-  
-  var mifareFamily: NFCMiFareFamily = .desfire
-  
-  var identifier: Data = Data()
-  
-  var historicalBytes: Data?
-  
-  var type: __NFCTagType = .miFare
-  
-  var session: NFCReaderSessionProtocol?
-  
-  var isAvailable: Bool = false
-  
-  func asNFCISO15693Tag() -> NFCISO15693Tag? {
-    nil
-  }
-  
-  func asNFCISO7816Tag() -> NFCISO7816Tag? {
-    nil
-  }
-  
-  func asNFCFeliCaTag() -> NFCFeliCaTag? {
-    nil
-  }
-  
-  func asNFCMiFareTag() -> NFCMiFareTag? {
-    nil
-  }
-  
-  func queryNDEFStatus(completionHandler: @escaping (NFCNDEFStatus, Int, Error?) -> Void) {
-    
-  }
-  
-  func readNDEF(completionHandler: @escaping (NFCNDEFMessage?, Error?) -> Void) {
-    
-  }
-  
-  func writeNDEF(_ ndefMessage: NFCNDEFMessage, completionHandler: @escaping (Error?) -> Void) {
-    
-  }
-  
-  func writeLock(completionHandler: @escaping (Error?) -> Void) {
-    
-  }
-  
-  static var supportsSecureCoding: Bool = false
-  
-  func copy(with zone: NSZone? = nil) -> Any {
-    Int()
-  }
-  
-  func encode(with coder: NSCoder) {
-    
-  }
-  
-  required init?(coder: NSCoder) {
-    
-  }
-  
-  override init() {
-    
-  }
-  
   
 }
