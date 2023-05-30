@@ -27,15 +27,28 @@ final class TagReader: NSObject, NFCTagReaderSessionDelegate {
     case .miFare(let tag):
       // tag is NFCMiFare
       Task {
-        /// Test are working but now as the write function needs a MyNFCMiFareTag the code in production doesn't
-        /// I don't know how can I address this as `MyNFCMiFareTag` is a protocol and `NFCMiFareTag` as well,
-        /// I cannot make a protocol conform another protocol 🤷‍♂️
-        let result = await airTag.write(data: Data(), for: tag)
+        /// Now as I have the concrete implementation of `MyNFCMiFareTag` for CoreNFC I can pass it to the ariTag.writer
+        let myTag = CoreNCFMyNFCMiFareTag(tag: tag)
+        let result = await airTag.write(data: Data(), for: myTag)
       }
     default:
       break
     }
   }
+}
+
+class CoreNCFMyNFCMiFareTag: MyNFCMiFareTag {
+  
+  let tag: NFCMiFareTag
+  
+  init(tag: NFCMiFareTag) {
+    self.tag = tag
+  }
+  
+  func sendMiFareCommand(commandPacket command: Data, resultHandler: @escaping (Result<Data, Error>) -> Void) {
+    tag.sendMiFareCommand(commandPacket: command, resultHandler: resultHandler)
+  }
+  
 }
 
 let airTag = AirTag()
